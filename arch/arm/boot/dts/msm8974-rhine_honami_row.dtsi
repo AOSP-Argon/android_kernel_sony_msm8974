@@ -63,7 +63,7 @@
 			glove_supported = <0>;
 			cover_supported = <0>;
 			touch_pressure_enabled = <1>;
-			touch_size_enabled = <0>;
+			touch_size_enabled = <1>;
 			touch_orientation_enabled = <0>;
 			preset_x_max = <1079>;
 			preset_y_max = <1919>;
@@ -1213,7 +1213,7 @@
 			compatible = "qcom,qpnp-vibrator";
 			reg = <0xc000 0x100>;
 			label = "vibrator";
-			qcom,qpnp-vib-vtg-level-mV = <3100>;
+			qcom,qpnp-vib-vtg-level-mV = <2600>;
 		};
 
 		qcom,vibrator@c100 {
@@ -1338,6 +1338,9 @@
 	};
 };
 
+&sdhc_1 {
+	qcom,bus-speed-mode = "DDR_1p8v";
+};
 
 &sdhc_2 {
 	qcom,pad-drv-on = <0x4 0x2 0x2>; /* 10mA, 6mA, 6mA */
