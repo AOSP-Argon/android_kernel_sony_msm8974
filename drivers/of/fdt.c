@@ -548,6 +548,14 @@ int __init of_flat_dt_match(unsigned long node, const char *const *compat)
 }
 
 #ifdef CONFIG_BLK_DEV_INITRD
+#ifndef __early_init_dt_declare_initrd
+static void __early_init_dt_declare_initrd(unsigned long start,
+					   unsigned long end)
+{
+	__early_init_dt_declare_initrd(start, end);
+}
+#endif
+
 /**
  * early_init_dt_check_for_initrd - Decode initrd location from flat tree
  * @node: reference to node containing initrd location ('chosen')
