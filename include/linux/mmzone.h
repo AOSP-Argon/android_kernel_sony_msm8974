@@ -55,6 +55,7 @@ enum {
 	 * MAX_ORDER_NR_PAGES should biggest page be bigger then
 	 * a single pageblock.
 	 */
+	#define is_migrate_cma_page(_page) false
 	MIGRATE_CMA,
 #endif
 	MIGRATE_ISOLATE,	/* can't allocate from here */
